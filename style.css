@@ -871,37 +871,6 @@ footer {
     transform: scale(1.2);
   }
 
-  /* Quick Contact ღილაკი */
-  .quick-contact-btn {
-    display: block;
-    margin-top: 30px;
-    padding: 10px 20px;
-    background: linear-gradient(90deg, #d4af37, #b8972e);
-    color: #1a1a1a;
-    font-size: 16px;
-    font-family: 'Cinzel', serif;
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    transition-delay: 0.6s;
-  }
-
-  .nav-links.active .quick-contact-btn {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .quick-contact-btn:hover {
-    transform: scale(1.1);
-    background: linear-gradient(90deg, #b8972e, #d4af37);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
-  }
-
   .logo-text {
     font-size: 40px;
   }
@@ -919,7 +888,7 @@ footer {
   
     padding: 60px 10px;
     height: auto;
-    margin-top: 5%; /* ნავიგაციის ქვეშ */
+    margin-top: 30%; /* ნავიგაციის ქვეშ */
   }
 
   #special-offers h2 {
