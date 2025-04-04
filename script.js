@@ -237,3 +237,25 @@ function handleRegister(event) {
     alert('Registration successful! You can now log in.');
     window.location.href = 'login.html'; // Redirect to login page
 }
+
+// Hamburger მენიუს გახსნა/დახურვა
+document.querySelector('.hamburger').addEventListener('click', () => {
+  document.querySelector('.nav-links').classList.toggle('active');
+  document.querySelector('.hamburger').classList.toggle('active');
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const offerItems = document.querySelectorAll('.offer-item');
+    const mobileOfferBtn = document.querySelector('.mobile-offer-btn');
+  
+    if (mobileOfferBtn && window.innerWidth <= 768) {
+      let currentOfferIndex = 0;
+      offerItems[currentOfferIndex].classList.add('active');
+  
+      mobileOfferBtn.addEventListener('click', () => {
+        offerItems[currentOfferIndex].classList.remove('active');
+        currentOfferIndex = (currentOfferIndex + 1) % offerItems.length;
+        offerItems[currentOfferIndex].classList.add('active');
+      });
+    }
+  });

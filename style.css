@@ -43,8 +43,6 @@ nav {
   padding-left: 10px;
 }
 
-
-
 .logo {
   display: flex;
   align-items: center;
@@ -53,7 +51,7 @@ nav {
 
 .logo-text {
   font-family: 'Cinzel', serif;
-  font-size: 50px;
+  font-size: 45px;
   color: red;
   text-transform: uppercase;
   text-decoration: none;
@@ -64,12 +62,12 @@ nav {
 
 @keyframes scaleUp {
   from {
-      opacity: 0;
-      transform: scale(0.5);
+    opacity: 0;
+    transform: scale(0.5);
   }
   to {
-      opacity: 1;
-      transform: scale(1);
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -89,12 +87,12 @@ ul li {
 
 @keyframes fadeIn {
   from {
-      opacity: 0;
-      transform: translateY(-10px);
+    opacity: 0;
+    transform: translateY(-10px);
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -162,6 +160,28 @@ ul li a:hover::after {
   display: block;
 }
 
+/* Hamburger მენიუს სტილები */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: #d4af37;
+  transition: all 0.3s ease;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
 #special-offers {
   margin-top: 5%;
   padding: 100px 20px;
@@ -182,7 +202,7 @@ ul li a:hover::after {
 
 .offers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
@@ -306,14 +326,14 @@ ul li a:hover::after {
   color: inherit;
   cursor: pointer;
   transition: transform 0.5s ease, opacity 0.5s ease, z-index 0.5s ease;
-  z-index: 1; /* Default z-index */
+  z-index: 1;
 }
 
 .carousel-item.center {
   transform: scale(1.2);
   opacity: 1;
   z-index: 10;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7); /* Enhanced shadow for the center item */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
 }
 
 .carousel-content {
@@ -325,7 +345,7 @@ ul li a:hover::after {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 15px 15px 0 0; /* Ensure border radius is preserved */
+  border-radius: 15px 15px 0 0;
 }
 
 .carousel-content h3 {
@@ -378,81 +398,9 @@ ul li a:hover::after {
   right: 30px;
 }
 
-
 .photos {
   width: 250px;
 }
-
-@media (max-width: 768px) {
-  .logo-text {
-      font-size: 30px;
-  }
-
-  nav {
-      padding-left: 5px;
-  }
-
-  .logo {
-      margin-left: 0;
-  }
-
-  ul li {
-      margin-left: 20px;
-  }
-
-  ul li a {
-      font-size: 16px;
-  }
-
-  .carousel-item {
-      flex: 0 0 300px;
-  }
-}
-.carousel-container {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: hidden; /* დავმალოთ გადამეტებული ელემენტები */
-}
-
-.carousel {
-  display: flex; /* ჰორიზონტალური განლაგება */
-  transition: transform 0.5s ease-in-out; /* გლუვი გადასვლა */
-}
-
-
-.carousel-item:hover {
-  transform: scale(1.1); /* ზრდა 1.1-ჯერ hover-ისას */
-}
-
-.carousel-content h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  color: #d4af37;
-  margin-bottom: 10px;
-}
-
-.carousel-content p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-.carousel-content .price {
-  font-family: 'Cinzel', serif;
-  font-size: 18px;
-  color: #d4af37;
-  font-weight: 700;
-}
-
-
-.carousel-btn:hover {
-  background: linear-gradient(90deg, #b8972e, #d4af37);
-  transform: translateY(-50%) scale(1.1); /* ისრის hover ეფექტი უცვლელი */
-}
-
-/* Q&A*/
 
 /* FAQ Section */
 #faq {
@@ -520,8 +468,6 @@ ul li a:hover::after {
   content: '-';
 }
 
-
-/* რეგისტრაცია  */
 /* Register Section */
 #register {
   padding: 60px 20px;
@@ -604,9 +550,6 @@ ul li a:hover::after {
   text-decoration: underline;
 }
 
-
-
-
 /* Social Media Icons */
 .social-icons {
   display: flex;
@@ -625,7 +568,6 @@ ul li a:hover::after {
   color: #b8972e;
 }
 
-/* Header Social Icons */
 header .social-icons {
   width: 79px;
   position: absolute;
@@ -634,12 +576,11 @@ header .social-icons {
   transform: translateY(-50%);
 }
 
-/* Footer Social Icons */
 footer .social-icons {
   justify-content: center;
   margin-top: 10px;
 }
-   
+
 footer {
   text-align: center;
   padding: 30px;
@@ -648,4 +589,366 @@ footer {
   font-family: 'Cinzel', serif;
   font-size: 16px;
   border-top: 1px solid #d4af37;
-} 
+}
+
+/* ტაბლეტის ვერსია (769px-დან 1124px-მდე) */
+@media (min-width: 769px) and (max-width: 1124px) {
+  .logo-text {
+    font-size: 30px;
+  }
+
+  nav {
+    padding-left: 8px;
+  }
+
+  ul li {
+    margin-left: 30px;
+  }
+
+  ul li a {
+    font-size: 15px;
+  }
+
+  header .social-icons {
+    right: -120px;
+    top: -5%;
+  }
+
+  #special-offers {
+    padding: 80px 15px;
+    height: auto;
+  }
+
+  #special-offers h2 {
+    font-size: 33px;
+    margin-bottom: 40px;
+  }
+
+  .offers-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+
+  .offer-item img {
+    height: 270px;
+  }
+
+  .offer-content h3 {
+    font-size: 18px;
+  }
+
+  .luxury-btn {
+    padding: 10px 25px;
+    font-size: 15px;
+  }
+
+  #shop {
+    padding: 30px 15px;
+    margin-bottom: 2%;
+  }
+
+  #shop h2 {
+    font-size: 25px;
+    margin-bottom: 25px;
+  }
+
+  .carousel-item {
+    flex: 0 0 320px;
+    margin: 0 15px;
+  }
+
+  .carousel-content img {
+    height: 180px;
+  }
+
+  .carousel-content h3 {
+    font-size: 15px;
+  }
+
+  .carousel-content p {
+    font-size: 12px;
+  }
+
+  .carousel-btn {
+    padding: 10px 12px;
+    font-size: 20px;
+  }
+
+  .prev-btn {
+    left: 20px;
+  }
+
+  .next-btn {
+    right: 20px;
+  }
+
+  .dropdown-content a {
+    font-size: 13px;
+  }
+
+  #faq {
+    padding: 50px 15px;
+  }
+
+  #faq h2 {
+    font-size: 2rem;
+  }
+
+  .faq-question h3 {
+    font-size: 1.1rem;
+  }
+
+  .faq-answer p {
+    font-size: 0.9rem;
+  }
+
+  footer {
+    padding: 25px;
+    font-size: 14px;
+  }
+
+  footer .social-icons {
+    gap: 12px;
+  }
+
+  .social-icon {
+    font-size: 18px;
+  }
+
+  /* ღილაკი იმალება ტაბლეტზე */
+  .mobile-offer-btn {
+    display: none;
+  }
+}
+
+/* მობაილის ვერსია (max-width: 768px) */
+@media (max-width: 768px) {
+  /* ნავიგაციის მორგება */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 250px;
+    background: linear-gradient(90deg, #1a1a1a, #2c2c2c);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  ul li {
+    margin: 20px 0;
+  }
+
+  ul li a {
+    font-size: 16px;
+    color: #d4af37;
+  }
+
+  .dropdown-content {
+    position: static;
+    background: none;
+    border: none;
+    box-shadow: none;
+    min-width: 100%;
+  }
+
+  .dropdown-content a {
+    padding: 10px 0;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  header .social-icons {
+    display: none;
+  }
+
+  .logo-text {
+    font-size: 30px;
+  }
+
+  nav {
+    padding-left: 5px;
+  }
+
+  .logo {
+    margin-left: 0;
+  }
+
+  /* Special Offers სექცია - მხოლოდ ერთი ფოტო ჩანს */
+  #special-offers {
+    padding: 60px 10px;
+    height: auto;
+    margin-top: 80px; /* ნავიგაციის ქვეშ */
+  }
+
+  #special-offers h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .offers-grid {
+    display: block; /* Grid-ის ნაცვლად block */
+    position: relative;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .offer-item {
+    display: none; /* ყველა ელემენტი თავიდან იმალება */
+    width: 100%;
+    margin: 0 auto;
+    max-width: 300px; /* ფიქსირებული სიგანე */
+  }
+
+  .offer-item.active {
+    display: block; /* მხოლოდ აქტიური ჩანს */
+  }
+
+  .offer-item img {
+    height: 250px;
+  }
+
+  .offer-content h3 {
+    font-size: 20px;
+  }
+
+  .luxury-btn {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+
+  /* ღილაკის სტილები */
+  .mobile-offer-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 30px;
+    background: linear-gradient(90deg, #d4af37, #b8972e);
+    border: none;
+    color: #1a1a1a;
+    font-size: 16px;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  }
+
+  .mobile-offer-btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(90deg, #b8972e, #d4af37);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+  }
+
+  /* Shop სექცია - კარუსელის მორგება */
+  #shop {
+    padding: 30px 10px;
+  }
+
+  #shop h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .carousel-container {
+    padding: 0 10px;
+  }
+
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 20px;
+  }
+
+  .carousel-item {
+    flex: 0 0 280px;
+    scroll-snap-align: center;
+    margin: 0;
+  }
+
+  .carousel-item.center {
+    transform: scale(1);
+  }
+
+  .carousel-content img {
+    height: 160px;
+  }
+
+  .carousel-content h3 {
+    font-size: 16px;
+  }
+
+  .carousel-content p {
+    font-size: 12px;
+  }
+
+  .carousel-btn {
+    padding: 8px 10px;
+    font-size: 18px;
+  }
+
+  .prev-btn {
+    left: 10px;
+  }
+
+  .next-btn {
+    right: 10px;
+  }
+
+  /* FAQ სექცია */
+  #faq {
+    padding: 40px 10px;
+  }
+
+  #faq h2 {
+    font-size: 1.8rem;
+  }
+
+  .faq-question h3 {
+    font-size: 1rem;
+  }
+
+  .faq-answer p {
+    font-size: 0.85rem;
+  }
+
+  /* ფუტერი */
+  footer {
+    padding: 20px;
+    font-size: 12px;
+  }
+
+  footer .social-icons {
+    gap: 10px;
+  }
+
+  .social-icon {
+    font-size: 16px;
+  }
+}

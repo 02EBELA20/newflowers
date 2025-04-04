@@ -15,36 +15,42 @@
             <div id="particles-js"></div>
             <nav>
                 <div class="logo">
-                    <a href="index.html" class="logo-text">Flowers For Flowers</a>
+                  <a href="index.html" class="logo-text">Flowers For Flowers</a>
                 </div>
-                <ul>
-                    <li style="--index: 1;"><a href="special-offers.html">special-offers</a></li>
-                    <li style="--index: 2;" class="dropdown">
-                        <a href="shop.html" class="dropbtn">Shop</a>
-                        <div class="dropdown-content">
-                            <a href="shop.html?category=roses">Roses</a>
-                            <a href="shop.html?category=lilies">Lilies</a>
-                            <a href="shop.html?category=tulips">Tulips</a>
-                            <a href="shop.html?category=orchids">Orchids</a>
-                            <a href="shop.html?category=mixed">Mixed</a>
-                        </div>
-                    </li>
-                    <li style="--index: 3;"><a href="about.html">About</a></li>
-                    <li style="--index: 4;"><a href="contact.html">Contact</a></li>
+                <!-- Hamburger ღილაკი -->
+                <div class="hamburger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <ul class="nav-links">
+                  <li style="--index: 1;"><a href="special-offers.html">special-offers</a></li>
+                  <li style="--index: 2;" class="dropdown">
+                    <a href="shop.html" class="dropbtn">Shop</a>
+                    <div class="dropdown-content">
+                      <a href="shop.html?category=roses">Roses</a>
+                      <a href="shop.html?category=lilies">Lilies</a>
+                      <a href="shop.html?category=tulips">Tulips</a>
+                      <a href="shop.html?category=orchids">Orchids</a>
+                      <a href="shop.html?category=mixed">Mixed</a>
+                    </div>
+                  </li>
+                  <li style="--index: 3;"><a href="about.html">About</a></li>
+                  <li style="--index: 4;"><a href="contact.html">Contact</a></li>
                 </ul>
                 <!-- Social Media Icons -->
                 <div class="social-icons">
-                    <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/19177690262" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                  <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                  <a href="https://wa.me/19177690262" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
                 </div>
-            </nav>
+              </nav>
         </header>
 
         <section id="special-offers">
             <h2>Special Offers</h2>
             <div class="offers-grid">
-                <div class="offer-item">
+                <div class="offer-item" data-index="0">
                     <img src="https://images.unsplash.com/photo-1509266272358-7701da638078?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Valentine's Day Special" class="photos">
                     <div class="offer-content">
                         <h3>Valentine's Day Special</h3>
@@ -55,7 +61,7 @@
                         <a href="contact.html" class="luxury-btn">Shop Now</a>
                     </div>
                 </div>
-                <div class="offer-item">
+                <div class="offer-item" data-index="1">
                     <img src="img/logo1.jpg" alt="Wedding Collection" class="photos">
                     <div class="offer-content">
                         <h3>Wedding Collection</h3>
@@ -66,7 +72,7 @@
                         <a href="contact.html" class="luxury-btn">Shop Now</a>
                     </div>
                 </div>
-                <div class="offer-item">
+                <div class="offer-item" data-index="2">
                     <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Limited Edition Bouquet" class="photos">
                     <div class="offer-content">
                         <h3>Limited Edition Bouquet</h3>
@@ -78,6 +84,7 @@
                     </div>
                 </div>
             </div>
+            <button class="mobile-offer-btn">Next Offer</button> <!-- ახალი ღილაკი -->
         </section>
 
         <section id="shop">
