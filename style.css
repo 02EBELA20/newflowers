@@ -17,6 +17,7 @@ body {
 }
 
 header {
+ 
   background: #0d0d0d;
   padding: 20px;
   position: fixed;
@@ -169,8 +170,8 @@ ul li a:hover::after {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 25px;
-  height: 15px;
+  width: 30px;
+  height: 20px;
   cursor: pointer;
 }
 
@@ -807,7 +808,7 @@ footer {
 
   ul li a {
     font-size: 18px;
-    color: #d4af37;
+    color:goldenrod;
     padding: 10px 20px;
     border-radius: 5px;
     transition: background 0.3s ease, color 0.3s ease;
@@ -816,7 +817,7 @@ footer {
 
   ul li a:hover {
     background: rgba(212, 175, 55, 0.2);
-    color: #fff;
+    color: blueviolet;
   }
 
   .dropdown-content {
@@ -830,7 +831,7 @@ footer {
   .dropdown-content a {
     padding: 10px 0;
     font-size: 14px;
-    color: #d4af37;
+    color: blueviolet;
   }
 
   header .desktop-social-icons {
@@ -902,7 +903,7 @@ footer {
   }
 
   .logo-text {
-    font-size: 30px;
+    font-size: 40px;
   }
 
   nav {
@@ -915,9 +916,10 @@ footer {
 
   /* Special Offers სექცია - მხოლოდ ერთი ფოტო ჩანს */
   #special-offers {
+  
     padding: 60px 10px;
     height: auto;
-    margin-top: 80px; /* ნავიგაციის ქვეშ */
+    margin-top: 5%; /* ნავიგაციის ქვეშ */
   }
 
   #special-offers h2 {
@@ -979,63 +981,7 @@ footer {
     box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
   }
 
-  /* Shop სექცია - კარუსელის მორგება */
-  #shop {
-    padding: 30px 10px;
-  }
-
-  #shop h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-
-  .carousel-container {
-    padding: 0 10px;
-  }
-
-  .carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 20px;
-  }
-
-  .carousel-item {
-    flex: 0 0 280px;
-    scroll-snap-align: center;
-    margin: 0;
-  }
-
-  .carousel-item.center {
-    transform: scale(1);
-  }
-
-  .carousel-content img {
-    height: 160px;
-  }
-
-  .carousel-content h3 {
-    font-size: 16px;
-  }
-
-  .carousel-content p {
-    font-size: 12px;
-  }
-
-  .carousel-btn {
-    padding: 8px 10px;
-    font-size: 18px;
-  }
-
-  .prev-btn {
-    left: 10px;
-  }
-
-  .next-btn {
-    right: 10px;
-  }
-
+  
   /* FAQ სექცია */
   #faq {
     padding: 40px 10px;
