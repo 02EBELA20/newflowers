@@ -977,8 +977,10 @@ footer {
   footer .social-icons {
     gap: 10px;
   }
-
+footer p{
+  font-size: 15px;
+}
   .social-icon {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
