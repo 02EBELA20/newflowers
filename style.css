@@ -11,7 +11,10 @@ body {
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
 }
-.mobile-offer-btn{display: none;}
+
+.mobile-offer-btn {
+  display: none;
+}
 
 header {
   background: #0d0d0d;
@@ -166,8 +169,8 @@ ul li a:hover::after {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 30px;
-  height: 20px;
+  width: 25px;
+  height: 15px;
   cursor: pointer;
 }
 
@@ -556,9 +559,11 @@ ul li a:hover::after {
   display: flex;
   gap: 15px;
   margin-top: 10px;
+
 }
 
 .social-icon {
+  text-decoration: none;
   color: #d4af37;
   font-size: 20px;
   transition: transform 0.3s ease, color 0.3s ease;
@@ -569,12 +574,17 @@ ul li a:hover::after {
   color: #b8972e;
 }
 
-header .social-icons {
+header .desktop-social-icons {
   width: 79px;
   position: absolute;
   right: -132px;
   top: -9%;
   transform: translateY(-50%);
+}
+
+/* მობაილისთვის .mobile-social-icons თავიდან იმალება */
+.mobile-social-icons {
+  display: none;
 }
 
 footer .social-icons {
@@ -610,7 +620,7 @@ footer {
     font-size: 15px;
   }
 
-  header .social-icons {
+  header .desktop-social-icons {
     right: -120px;
     top: -5%;
   }
@@ -720,6 +730,10 @@ footer {
   .mobile-offer-btn {
     display: none;
   }
+
+  .mobile-social-icons {
+    display: none; /* მობაილის ხატულები იმალება */
+  }
 }
 
 /* მობაილის ვერსია (max-width: 768px) */
@@ -735,13 +749,15 @@ footer {
     left: -100%;
     height: 100vh;
     width: 250px;
-    background: linear-gradient(90deg, #1a1a1a, #2c2c2c);
+    background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 50%, #1a1a1a 100%); /* გაუმჯობესებული გრადიენტი */
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center; /* ცენტრში განლაგება */
     padding: 20px;
     transition: left 0.3s ease;
     z-index: 999;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.7); /* ჩრდილი მარჯვნივ */
+    overflow: hidden;
   }
 
   .nav-links.active {
@@ -762,11 +778,45 @@ footer {
 
   ul li {
     margin: 20px 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(-20px); /* თავდაპირველად მარცხნივ გადაადგილებული */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  /* ანიმაცია თითოეული ლინკისთვის, როდესაც მენიუ გაიხსნება */
+  .nav-links.active ul li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* თითოეულ ლინკს განსხვავებული დაგვიანება */
+  .nav-links.active ul li:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  .nav-links.active ul li:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  .nav-links.active ul li:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  .nav-links.active ul li:nth-child(4) {
+    transition-delay: 0.4s;
   }
 
   ul li a {
-    font-size: 16px;
-    color: skyblue;
+    font-size: 18px;
+    color: #d4af37;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+    display: block;
+  }
+
+  ul li a:hover {
+    background: rgba(212, 175, 55, 0.2);
+    color: #fff;
   }
 
   .dropdown-content {
@@ -780,15 +830,79 @@ footer {
   .dropdown-content a {
     padding: 10px 0;
     font-size: 14px;
-    color:goldenrod;
+    color: #d4af37;
   }
 
-  header .social-icons {
-    display: none;
+  header .desktop-social-icons {
+    display: none; /* დესკტოპის ხატულები იმალება */
+  }
+
+  .nav-links.active .mobile-social-icons {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: 0.5s;
+  }
+
+  .nav-links.active .mobile-social-icons {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mobile-social-icons .social-icon {
+    font-size: 20px;
+    background: rgba(212, 175, 55, 0.2); /* მრგვალი ფონი */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .mobile-social-icons .social-icon:hover {
+    background: #d4af37;
+    transform: scale(1.2);
+  }
+
+  /* Quick Contact ღილაკი */
+  .quick-contact-btn {
+    display: block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #d4af37, #b8972e);
+    color: #1a1a1a;
+    font-size: 16px;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: 0.6s;
+  }
+
+  .nav-links.active .quick-contact-btn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .quick-contact-btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(90deg, #b8972e, #d4af37);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
   }
 
   .logo-text {
-    font-size: 25px;
+    font-size: 30px;
   }
 
   nav {
