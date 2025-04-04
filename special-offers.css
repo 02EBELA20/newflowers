@@ -215,7 +215,7 @@ header .social-icons {
 
 /* Special Offers Section */
 #special-offers {
-  margin-top: 3%;
+  margin-top: 6%;
   padding: 60px 10px;
   background: linear-gradient(90deg, #1a1a1a, #2c2c2c);
   text-align: center;
@@ -257,16 +257,14 @@ header .social-icons {
   touch-action: pan-y pinch-zoom;
 }
 
-.carousel-container {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  gap: 15px;
-  padding: 0 10px;
-  touch-action: pan-x;
+.carousel-container{
+  display:flex;
+  grid-template-rows: repeat(auto-fit, minmax(250px, 1fr)); /* Narrower cards (250px min width) */
+  gap: 40px; /* Increased spacing between cards */
 }
-
 .special-bouquet-item {
-  flex: 0 0 calc(50% - 10px);
+
+  flex: 0 0 calc(25% - 10px);
   background: #2c2c2c;
   border-radius: 10px;
   overflow: hidden;
@@ -537,235 +535,409 @@ footer .social-icons {
   }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  /* Navigation Adjustments */
-  .hamburger {
-    display: flex;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
 
-  .nav-links {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    height: 100vh;
-    width: 250px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 50%, #1a1a1a 100%);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    transition: left 0.3s ease;
-    z-index: 999;
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.7);
+/* Mobile: Adjust for 2 cards at a time */
+@media (max-width: 768px) {
+
+    /* Navigation Adjustments */
+    .hamburger {
+      display: flex;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
+    .nav-links {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      height: 100vh;
+      width: 250px;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 50%, #1a1a1a 100%);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      transition: left 0.3s ease;
+      z-index: 999;
+      box-shadow: 5px 0 15px rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+    }
+  
+    .nav-links.active {
+      left: 0;
+    }
+  
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+  
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  
+    ul li {
+      margin: 20px 0;
+      width: 100%;
+      text-align: center;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+  
+    .nav-links.active ul li {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  
+    .nav-links.active ul li:nth-child(1) {
+      transition-delay: 0.1s;
+    }
+    .nav-links.active ul li:nth-child(2) {
+      transition-delay: 0.2s;
+    }
+    .nav-links.active ul li:nth-child(3) {
+      transition-delay: 0.3s;
+    }
+    .nav-links.active ul li:nth-child(4) {
+      transition-delay: 0.4s;
+    }
+  
+    ul li a {
+      font-size: 18px;
+      color: #d4af37;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background 0.3s ease, color 0.3s ease;
+      display: block;
+    }
+  
+    ul li a:hover {
+      background: rgba(212, 175, 55, 0.2);
+      color: #b8972e;
+    }
+  
+    .dropdown-content {
+      position: static;
+      background: none;
+      border: none;
+      box-shadow: none;
+      min-width: 100%;
+    }
+  
+    .dropdown-content a {
+      padding: 10px 0;
+      font-size: 14px;
+      color: #d4af37;
+    }
+  
+    header .desktop-social-icons {
+      display: none;
+    }
+  
+    ul.nav-links.active .mobile-social-icons {
+      display: flex;
+      margin-top: 20px;
+      justify-content: center;
+      width: 100%;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      transition-delay: 0.5s;
+    }
+  
+    ul.nav-links.active .mobile-social-icons {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    .mobile-social-icons .social-icon {
+      font-size: 20px;
+      background: rgba(212, 175, 55, 0.2);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+  
+    .mobile-social-icons .social-icon:hover {
+      background: #d4af37;
+      transform: scale(1.2);
+    }
+  
+    .logo-text {
+      font-family: 'Cinzel', serif;
+      font-size: 40px;
+      color: red;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 2px;
+    }
+  
+    nav {
+      padding-left: 5px;
+      padding-right: 5px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .logo {
+      margin-left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      
+    }
+  /* Special Offers Section */
+  #special-offers {
+    margin-top: 6%;
+    padding: 60px 10px;
+    background: linear-gradient(90deg, #1a1a1a, #2c2c2c);
+    text-align: center;
     overflow: hidden;
   }
-
-  .nav-links.active {
-    left: 0;
-  }
-
-  .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
-
-  ul li {
-    margin: 20px 0;
-    width: 100%;
-    text-align: center;
-    opacity: 0;
-    transform: translateX(-20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-
-  .nav-links.active ul li {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .nav-links.active ul li:nth-child(1) {
-    transition-delay: 0.1s;
-  }
-  .nav-links.active ul li:nth-child(2) {
-    transition-delay: 0.2s;
-  }
-  .nav-links.active ul li:nth-child(3) {
-    transition-delay: 0.3s;
-  }
-  .nav-links.active ul li:nth-child(4) {
-    transition-delay: 0.4s;
-  }
-
-  ul li a {
-    font-size: 18px;
+  
+  .underlined-title {
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
     color: #d4af37;
-    padding: 10px 20px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-bottom: 5%;
+  }
+  
+  /* Glowing Animation for Label (if needed) */
+  @keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 5px #d4af37, 0 0 10px #d4af37, 0 0 20px #d4af37;
+    }
+    50% {
+        text-shadow: 0 0 10px #d4af37, 0 0 20px #d4af37, 0 0 30px #d4af37;
+    }
+  }
+  
+  /* Carousel Styles */
+  .special-bouquets-carousel {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    touch-action: pan-y pinch-zoom;
+  }
+  
+  .carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 20px; /* Spacing between cards */
+    padding: 0 10px;
+    touch-action: pan-x;
+  }
+  
+  .special-bouquet-item {
+    flex: 0 0 200px; /* Fixed width of 200px for each card */
+    max-width: 200px; /* Ensure maximum width is 200px */
+    background: #2c2c2c;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: calc(0.2s * var(--index));
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    cursor: pointer;
+  }
+  
+  .special-bouquet-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
+  }
+  
+  .special-bouquet-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .discount-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #d4af37;
+    color: #1a1a1a;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 10px;
     border-radius: 5px;
-    transition: background 0.3s ease, color 0.3s ease;
-    display: block;
+    z-index: 1;
+    animation: pulse 1.5s infinite;
+    will-change: transform;
   }
-
-  ul li a:hover {
-    background: rgba(212, 175, 55, 0.2);
-    color: #b8972e;
+  
+  /* Pulse Animation for Discount Badge */
+  @keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
   }
-
-  .dropdown-content {
-    position: static;
-    background: none;
-    border: none;
-    box-shadow: none;
-    min-width: 100%;
+  
+  .special-bouquet-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: #d4af37;
+    margin: 10px 0;
+    padding: 0 10px;
   }
-
-  .dropdown-content a {
-    padding: 10px 0;
+  
+  .special-bouquet-item p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: #fff;
+    margin-bottom: 10px;
+    padding: 0 10px;
+  }
+  
+  .special-bouquet-item .price-container {
+    margin-bottom: 10px;
+    padding: 0 10px;
+  }
+  
+  .special-bouquet-item .old-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    color: #888;
+    text-decoration: line-through;
+    margin-right: 5px;
+  }
+  
+  .special-bouquet-item .new-price {
+    font-family: 'Playfair Display', serif;
     font-size: 14px;
     color: #d4af37;
   }
-
-  header .desktop-social-icons {
-    display: none;
-  }
-
-  ul.nav-links.active .mobile-social-icons {
-    display: flex;
-    margin-top: 20px;
-    justify-content: center;
-    width: 100%;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    transition-delay: 0.5s;
-  }
-
-  ul.nav-links.active .mobile-social-icons {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .mobile-social-icons .social-icon {
-    font-size: 20px;
-    background: rgba(212, 175, 55, 0.2);
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: background 0.3s ease, transform 0.3s ease;
-  }
-
-  .mobile-social-icons .social-icon:hover {
+  
+  .special-bouquet-item .luxury-btn {
+    display: inline-block;
+    padding: 6px 12px;
     background: #d4af37;
-    transform: scale(1.2);
-  }
-
-  .logo-text {
-    font-family: 'Cinzel', serif;
-    font-size: 40px;
-    color: red;
-    text-transform: uppercase;
+    color: #1a1a1a;
     text-decoration: none;
-    letter-spacing: 2px;
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+    margin-bottom: 10px;
+  }
+  
+  .special-bouquet-item .luxury-btn:hover {
+    background: #b8972e;
+    color: #fff;
+  }
+  
+  /* Carousel Navigation Buttons */
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(212, 175, 55, 0.7);
+    border: none;
+    color: #1a1a1a;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+  }
+  
+  .carousel-btn:hover {
+    background: #d4af37;
+  }
+  
+  .prev-btn {
+    left: 10px;
+  }
+  
+  .next-btn {
+    right: 10px;
   }
 
-  nav {
-    padding-left: 5px;
-    padding-right: 5px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .logo {
-    margin-left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    
-  }
-
-  /* Special Offers Section */
+  
   #special-offers {
-
-    padding: 60px 10px;
-    margin-top: 30%;
+      padding: 60px 10px;
+      margin-top: 30%;
   }
 
   .underlined-title {
-    font-size: 28px;
-  }
-
-  .special-cards-label {
-    font-size: 18px;
+      font-size: 28px;
   }
 
   .special-bouquet-item {
-    flex: 0 0 calc(50% - 10px);
+      flex: 0 0 calc(50% - 10px); /* 2 cards at a time */
+      max-width: calc(50% - 10px); /* Adjust max-width for mobile */
   }
 
   .special-bouquet-item img {
-    height: 120px;
+      height: 120px;
   }
 
   .special-bouquet-item h3 {
-    font-size: 14px;
+      font-size: 14px;
   }
 
   .special-bouquet-item p {
-    font-size: 11px;
+      font-size: 11px;
   }
 
   .special-bouquet-item .old-price {
-    font-size: 11px;
+      font-size: 11px;
   }
 
   .special-bouquet-item .new-price {
-    font-size: 13px;
+      font-size: 13px;
   }
 
   .special-bouquet-item .luxury-btn {
-    font-size: 11px;
-    padding: 5px 10px;
+      font-size: 11px;
+      padding: 5px 10px;
   }
 
-  /* Modal Adjustments */
+  /* Modal Adjustments for Mobile */
   .modal-image {
-    max-height: 200px;
+      max-height: 200px;
   }
 
   .modal-title {
-    font-size: 20px;
+      font-size: 20px;
   }
 
   .modal-description {
-    font-size: 14px;
+      font-size: 14px;
   }
 
   .modal-old-price {
-    font-size: 14px;
+      font-size: 14px;
   }
 
   .modal-new-price {
-    font-size: 16px;
+      font-size: 16px;
   }
 
   .modal-luxury-btn {
-    font-size: 14px;
-    padding: 8px 15px;
+      font-size: 14px;
+      padding: 8px 15px;
   }
 }
