@@ -192,7 +192,7 @@ ul li a:hover::after {
   padding: 100px 20px;
   text-align: center;
   background-color: #0d0d0d;
-  background: url('img/backgr.jpg');
+  background: url('img/3f/7.jpg');
   height: 100vh;
 }
 
@@ -289,7 +289,7 @@ ul li a:hover::after {
   padding: 40px 20px;
   padding-bottom: 50px;
   text-align: center;
-  background-color: #0d0d0d;
+  background-color: none;
 }
 
 #shop h2 {
@@ -655,6 +655,8 @@ footer {
   }
 
   #shop {
+    
+
     padding: 30px 15px;
     margin-bottom: 2%;
   }
@@ -886,7 +888,8 @@ footer {
 
   /* Special Offers სექცია - მხოლოდ ერთი ფოტო ჩანს */
   #special-offers {
-  
+    background: url('img/3f/7.jpg');
+    background-position: left 70%;
     padding: 60px 10px;
     height: auto;
     margin-top: 31%; /* ნავიგაციის ქვეშ */

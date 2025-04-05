@@ -895,6 +895,8 @@ footer .social-icons {
 
   
   #special-offers {
+    background: url('img/3f/22.jpg');
+    background-position: left 80%;
       padding: 150px 10px;
       margin-top: 30%;
   }

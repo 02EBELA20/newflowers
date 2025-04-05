@@ -22,14 +22,6 @@ body::-webkit-scrollbar {
 }
 
 
-/* Contact Info Section */
-#contact-info {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
-  text-align: center;
-  border-top: 2px solid #d4af37;
-  border-bottom: 2px solid #d4af37;
-}
 
 
 /* Contact Info Section */
@@ -254,20 +246,25 @@ header .desktop-social-icons {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Contact Info Section */
 #contact-info {
   margin-top: 8%;
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+  
+  padding: 250px 20px;
+  background-image: url('img/3f/5.jpg'); /* თქვენი ფონის სურათი */
+  background-size: contain; /* სურათი მთლიანად გამოჩნდება */
+  background-position: bottom left 50%; /* ქვედა-მარცხენა პოზიცია */
+  background-repeat: no-repeat; /* სურათი არ განმეორდება */
+  min-height: 600px; /* სექციის მინიმალური სიმაღლე, რათა მეტი ნაწილი გამოჩნდეს */
   text-align: center;
   border-top: 2px solid #d4af37;
   border-bottom: 2px solid #d4af37;
 }
 
+
 .contact-info-container {
   max-width: 900px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(207, 180, 180, 0.05);
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -416,7 +413,8 @@ footer .social-icons {
 /* Contact Info Section */
 #contact-info {
   padding: 80px 20px;
-  background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+  background: url('img/3f/13.jpg');
+    background-position: right 70% ;
   text-align: center;
   border-top: 2px solid #d4af37;
   border-bottom: 2px solid #d4af37;

@@ -234,6 +234,9 @@ header .social-icons {
 
 /* Petals Canvas */
 #petals-canvas {
+  background: url('img/3f/13.jpg');
+    background-position: right 70% ;
+  ;
   position: absolute;
   top: 0;
   left: 0;

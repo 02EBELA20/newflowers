@@ -537,3 +537,8 @@ footer .social-icons {
     font-size: 16px;
   }
 }
+
+#about{
+  background: url('img/3f/44.jpg');
+    background-position: right 70% ;
+}
