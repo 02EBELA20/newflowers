@@ -346,14 +346,14 @@ header .social-icons {
 .offer-content {
   padding: 15px;
   text-align: center;
-  background-color:darkslategrey;
+  background-color:black;
   opacity: 0.8;
 }
 
 .offer-content h3 {
   font-family: 'Playfair Display', serif;
   font-size: 18px;
-  color: darkturquoise;
+  color: red;
   margin-bottom: 10px;
 }
 
