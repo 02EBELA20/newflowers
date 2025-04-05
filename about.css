@@ -489,7 +489,7 @@ footer .social-icons {
 
   .nav-links.active .mobile-social-icons {
     opacity: 1;
-    transform: translateX(-50%) translateY(-300%);
+    transform: translateX(-50%) translateY(-350%);
   }
 
   .mobile-social-icons .social-icon {
