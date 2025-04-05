@@ -977,7 +977,7 @@ ul li a:hover {
 
   .nav-links.active .mobile-social-icons {
       opacity: 1;
-      transform: translateY(400%);
+      transform: translateY(-1300%);
   }
 
   .mobile-social-icons .social-icon {
