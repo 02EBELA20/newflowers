@@ -964,6 +964,7 @@ ul li a:hover {
   }
 
   .nav-links.active .mobile-social-icons {
+    gap: 15px;
       display: flex;
       margin-top: 20px;
       justify-content: center;
