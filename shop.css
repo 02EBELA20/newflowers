@@ -84,7 +84,7 @@ nav {
 .logo-text {
   font-family: 'Cinzel', serif;
   font-size: 50px;
-  color: #d4af37; /* შეცვლილია ოქროსფერზე */
+  color: red; /* შეცვლილია ოქროსფერზე */
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 2px;
@@ -817,7 +817,7 @@ nav {
 .logo-text {
   font-family: 'Cinzel', serif;
   font-size: 40px;
-  color: #d4af37; /* Changed to gold to match the screenshot */
+  color: red; /* Changed to gold to match the screenshot */
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 2px;
