@@ -851,10 +851,11 @@ footer {
 
   .nav-links.active .mobile-social-icons {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(500%);
   }
 
   .mobile-social-icons .social-icon {
+   
     font-size: 20px;
     background: rgba(212, 175, 55, 0.2); /* მრგვალი ფონი */
     width: 40px;

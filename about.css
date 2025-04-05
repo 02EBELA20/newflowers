@@ -407,7 +407,7 @@ footer .social-icons {
   }
 
   .nav-links li {
-    margin: 30px 0; /* Increased margin for more spacing between links */
+    margin: 15px 0; /* Increased margin for more spacing between links */
     width: 100%;
     text-align: center;
     opacity: 0;
@@ -489,10 +489,12 @@ footer .social-icons {
 
   .nav-links.active .mobile-social-icons {
     opacity: 1;
-    transform: translateX(-50%) translateY(-350%);
+    transform: translateX(-50%) translateY(-50%);
   }
 
+
   .mobile-social-icons .social-icon {
+    
     text-decoration: none;
     font-size: 20px;
     background: rgba(212, 175, 55, 0.2);
