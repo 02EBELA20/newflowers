@@ -1,3 +1,9 @@
+// Hamburger Menu Toggle
+document.querySelector('.hamburger').addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('active');
+    document.querySelector('.hamburger').classList.toggle('active');
+});
+
 // Particles.js ინიციალიზაცია
 particlesJS('particles-js', {
     particles: {
@@ -17,35 +23,18 @@ particlesJS('particles-js', {
     retina_detect: true
 });
 
-// Scroll-ზე ანიმაციის გააქტიურება Special Offers და Contact Info სექციებისთვის
+// Scroll-ზე ანიმაციის გააქტიურება Contact Info სექციისთვის
 document.addEventListener('DOMContentLoaded', () => {
-    // Special Offers Section
-    const specialOffersSection = document.querySelector('#special-offers');
-    const specialOffersTitle = document.querySelector('.underlined-title');
-    const specialBouquetItems = document.querySelectorAll('.special-bouquet-item');
-
-    const observerOptions = {
-        threshold: 0.2
-    };
-
-    const specialOffersObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                specialOffersTitle.classList.add('animate');
-                specialBouquetItems.forEach(item => item.classList.add('animate'));
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    specialOffersObserver.observe(specialOffersSection);
-
     // Contact Info Section
     const contactInfoSection = document.querySelector('#contact-info');
     const contactInfoTitle = document.querySelector('.contact-info-title');
     const contactInfoText = document.querySelector('.contact-info-text');
     const contactInfoMethods = document.querySelectorAll('.contact-info-method');
     const contactInfoSocials = document.querySelector('.contact-info-socials');
+
+    const observerOptions = {
+        threshold: 0.2
+    };
 
     const contactInfoObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
