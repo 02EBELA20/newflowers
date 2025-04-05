@@ -74,7 +74,7 @@ nav {
 .logo-text {
   font-family: 'Cinzel', serif;
   font-size: 50px;
-  color: red;
+  color: goldenrod;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -247,7 +247,7 @@ header .desktop-social-icons {
 }
 
 #contact-info {
-  margin-top: 8%;
+  margin-top: 7%;
   
   padding: 250px 20px;
   background-image: url('img/3f/5.jpg'); /* თქვენი ფონის სურათი */
@@ -262,12 +262,14 @@ header .desktop-social-icons {
 
 
 .contact-info-container {
+  
   max-width: 900px;
   margin: 0 auto;
   background: rgba(207, 180, 180, 0.05);
   padding: 40px;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  margin-bottom: 10%;
+ 
 }
 
 .contact-info-title {
@@ -284,7 +286,7 @@ header .desktop-social-icons {
 .contact-info-text {
   font-family: 'Playfair Display', serif;
   font-size: 20px;
-  color: #e0e0e0;
+  color: black;
   line-height: 1.8;
   margin-bottom: 30px;
   opacity: 0;
@@ -301,7 +303,7 @@ header .desktop-social-icons {
 .contact-info-method {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
-  color: #fff;
+  color: black;
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
   animation-delay: calc(0.5s * var(--index));
@@ -314,7 +316,7 @@ header .desktop-social-icons {
 
 .contact-info-note {
   font-style: italic;
-  color: #d4af37;
+  color: black;
   font-size: 16px;
   margin-top: 10px;
 }
@@ -590,12 +592,35 @@ footer .social-icons {
       font-size: 16px;
   }
 
-
+  .contact-info-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: goldenrod;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.3s;
+  } 
+  .contact-info-method {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: goldenrod;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: calc(0.5s * var(--index));
+  }
+  .contact-link{
+    color: skyblue;
+  }
+  .contact-social-link{
+    color: skyblue;
+  }
 @media (max-width: 480px) {
   .contact-info-container {
       padding: 20px;
   }
-
+ 
   .contact-info-title {
       font-size: 28px;
   }

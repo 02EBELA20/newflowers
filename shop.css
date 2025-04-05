@@ -84,7 +84,7 @@ nav {
 .logo-text {
   font-family: 'Cinzel', serif;
   font-size: 50px;
-  color: red; /* შეცვლილია ოქროსფერზე */
+  color: goldenrod; /* შეცვლილია ოქროსფერზე */
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 2px;
@@ -234,7 +234,7 @@ header .social-icons {
 
 /* Petals Canvas */
 #petals-canvas {
-  background: url('img/3f/13.jpg');
+  background: url('img/3f/14.jpg');
     background-position: right 70% ;
   ;
   position: absolute;
@@ -346,12 +346,14 @@ header .social-icons {
 .offer-content {
   padding: 15px;
   text-align: center;
+  background-color:darkslategrey;
+  opacity: 0.8;
 }
 
 .offer-content h3 {
   font-family: 'Playfair Display', serif;
   font-size: 18px;
-  color: #d4af37;
+  color: darkturquoise;
   margin-bottom: 10px;
 }
 
@@ -369,7 +371,7 @@ header .social-icons {
 .offer-content .price {
   font-family: 'Playfair Display', serif;
   font-size: 16px;
-  color: #d4af37;
+  color: yellow;
   margin-bottom: 15px;
 }
 
@@ -394,8 +396,8 @@ header .social-icons {
 .offer-content .luxury-btn {
   display: inline-block;
   padding: 8px 15px;
-  background: #d4af37;
-  color: #1a1a1a;
+  background: aqua;
+  color: darkblue;
   text-decoration: none;
   font-family: 'Playfair Display', serif;
   font-size: 14px;
@@ -820,7 +822,7 @@ nav {
 .logo-text {
   font-family: 'Cinzel', serif;
   font-size: 40px;
-  color: red; /* Changed to gold to match the screenshot */
+  color: goldenrod; /* Changed to gold to match the screenshot */
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 2px;

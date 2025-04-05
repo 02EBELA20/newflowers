@@ -57,7 +57,7 @@ nav {
 .logo-text {
   font-family: 'Cinzel', serif;
   font-size: 45px;
-  color: red;
+  color: goldenrod;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 2px;
@@ -363,7 +363,7 @@ ul li a:hover::after {
 .carousel-content p {
   font-family: 'Poppins', sans-serif;
   font-size: 13px;
-  color: #fff;
+  color:skyblue;
   margin-bottom: 10px;
 }
 
@@ -461,7 +461,7 @@ ul li a:hover::after {
 .faq-answer p {
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
-  color: #ccc;
+  color: skyblue;
   margin: 0;
 }
 

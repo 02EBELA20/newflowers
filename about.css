@@ -71,7 +71,7 @@ nav {
 .logo-text {
   font-family: 'Cinzel', serif;
   font-size: 50px;
-  color: red;
+  color: goldenrod;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -259,6 +259,8 @@ header .desktop-social-icons {
   justify-content: center;
   align-items: center;
   text-align: center;
+  
+
 }
 
 .about-container {
@@ -269,7 +271,7 @@ header .desktop-social-icons {
 .about-title {
   font-family: 'Cinzel', serif;
   font-size: 42px;
-  color: #d4af37;
+  color:goldenrod;
   margin-bottom: 40px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -280,7 +282,7 @@ header .desktop-social-icons {
 .about-subtitle {
   font-family: 'Cinzel', serif;
   font-size: 28px;
-  color: #d4af37;
+  color: goldenrod;
   margin-top: 50px;
   margin-bottom: 30px;
   letter-spacing: 1px;
@@ -304,7 +306,7 @@ header .desktop-social-icons {
 .about-content p {
   font-family: 'Playfair Display', serif;
   font-size: 18px;
-  color: aliceblue;
+  color: gainsboro;
   line-height: 1.8;
   margin-bottom: 20px;
   opacity: 0;
@@ -335,7 +337,7 @@ header .desktop-social-icons {
 
 /* Hover ეფექტი About-ის პარაგრაფებზე */
 .about-content p:hover {
-  color: #d4af37;
+  color: red;
   transform: scale(1.02);
   transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -539,6 +541,6 @@ footer .social-icons {
 }
 
 #about{
-  background: url('img/3f/44.jpg');
-    background-position: right 70% ;
+  background: url('img/3f/17.jpg');
+    background-position: left 40% ;
 }
