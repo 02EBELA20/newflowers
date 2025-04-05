@@ -215,8 +215,8 @@ header .social-icons {
 
 /* Special Offers Section */
 #special-offers {
-  margin-top: 6%;
-  padding: 60px 10px;
+  margin-top:4%;
+  padding: 160px 10px;
   background: linear-gradient(90deg, #1a1a1a, #2c2c2c);
   text-align: center;
   overflow: hidden;
@@ -709,7 +709,7 @@ footer .social-icons {
   /* Special Offers Section */
   #special-offers {
     margin-top: 6%;
-    padding: 60px 10px;
+    padding: 150px 10px;
     background: linear-gradient(90deg, #1a1a1a, #2c2c2c);
     text-align: center;
     overflow: hidden;
@@ -895,7 +895,7 @@ footer .social-icons {
 
   
   #special-offers {
-      padding: 60px 10px;
+      padding: 150px 10px;
       margin-top: 30%;
   }
 
