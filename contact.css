@@ -21,13 +21,24 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-/* Page Wrapper */
-.page-wrapper {
-  margin-top: 5%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+
+/* Contact Info Section */
+#contact-info {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+  text-align: center;
+  border-top: 2px solid #d4af37;
+  border-bottom: 2px solid #d4af37;
+}
+
+
+/* Contact Info Section */
+#contact-info {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+  text-align: center;
+  border-top: 2px solid #d4af37;
+  border-bottom: 2px solid #d4af37;
 }
 
 /* Header Styles */
@@ -99,8 +110,8 @@ nav {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 12%;
-  width: 30%;
+  gap: 9%;
+  width: 36%;
 }
 
 .nav-links li {
@@ -393,11 +404,23 @@ footer .social-icons {
 
 /* Responsive Design - Mobile (max-width: 768px) */
 @media (max-width: 768px) {
-  /* Page Wrapper */
-  .page-wrapper {
-    margin-top: 20%;
-  }
+ /* Page Wrapper */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 100px; /* header-ის სიმაღლის გათვალისწინებით */
+}
 
+/* Contact Info Section */
+#contact-info {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+  text-align: center;
+  border-top: 2px solid #d4af37;
+  border-bottom: 2px solid #d4af37;
+}
   /* Navigation - Mobile Sidebar */
   .hamburger {
     display: flex;
@@ -568,7 +591,7 @@ footer .social-icons {
   .contact-social-link {
       font-size: 16px;
   }
-}
+
 
 @media (max-width: 480px) {
   .contact-info-container {
@@ -587,4 +610,4 @@ footer .social-icons {
       flex-wrap: wrap;
       gap: 10px;
   }
-}
+}}
