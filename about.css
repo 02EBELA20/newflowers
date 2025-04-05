@@ -95,8 +95,8 @@ nav {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 12%; /* Apply gap only for desktop */
-  width: 30%;
+  gap: 10%; /* Apply gap only for desktop */
+  width: 38%;
 }
 
 .nav-links li {
