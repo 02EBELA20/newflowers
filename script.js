@@ -1,5 +1,10 @@
+// Hamburger Menu Toggle
+document.querySelector('.hamburger').addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('active');
+    document.querySelector('.hamburger').classList.toggle('active');
+});
 
-// Particles.js for header
+// Particles.js for Background Effect
 particlesJS('particles-js', {
     particles: {
         number: { value: 80, density: { enable: true, value_area: 800 } },
@@ -16,7 +21,6 @@ particlesJS('particles-js', {
         }
     }
 });
-
 
 // Smooth scroll for navigation and external page redirects
 document.querySelectorAll('nav a').forEach(anchor => {
@@ -45,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let currentIndex = 0;
         const totalItems = carouselItems.length;
-        const itemWidth = carouselItems[0].offsetWidth + 40; // 350px (სიგანე) + 40px (მარჯინი)
+        const itemWidth = carouselItems[0].offsetWidth + 40; // 350px (width) + 40px (margin)
 
         // Clone items for infinite scroll
         const clonesPerSide = Math.ceil(window.innerWidth / itemWidth) + 1;
@@ -118,66 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// Filter and Search functionality for shop.html
-const categoryFilter = document.querySelector('#category-filter');
-const searchBar = document.querySelector('#search-bar');
-const shopItems = document.querySelectorAll('.shop-item');
-
-if (categoryFilter && searchBar) {
-    function applyFilters() {
-        const selectedCategory = categoryFilter.value;
-        const searchTerm = searchBar.value.toLowerCase();
-
-        shopItems.forEach(item => {
-            const itemCategory = item.getAttribute('data-category');
-            const itemName = item.querySelector('h3').textContent.toLowerCase();
-            const itemDescription = item.querySelector('p').textContent.toLowerCase();
-
-            const matchesCategory = selectedCategory === 'all' || itemCategory === selectedCategory;
-            const matchesSearch = itemName.includes(searchTerm) || itemDescription.includes(searchTerm);
-
-            if (matchesCategory && matchesSearch) {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
-            }
-        });
-    }
-
-    // Filter by category
-    categoryFilter.addEventListener('change', applyFilters);
-
-    // Search functionality
-    searchBar.addEventListener('input', applyFilters);
-
-    // Filter by URL parameter (e.g., shop.html?category=roses)
-    const urlParams = new URLSearchParams(window.location.search);
-    const categoryParam = urlParams.get('category');
-    if (categoryParam) {
-        categoryFilter.value = categoryParam;
-        applyFilters();
-    }
-}
-
-// Particles.js for header
-particlesJS('particles-js', {
-    particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
-        color: { value: '#d4af37' },
-        shape: { type: 'circle' },
-        opacity: { value: 0.7, random: true },
-        size: { value: 2, random: true },
-        move: { enable: true, speed: 0.5, direction: 'none', random: true, out_mode: 'out' }
-    },
-    interactivity: {
-        events: { 
-            onhover: { enable: true, mode: 'repulse' },
-            onclick: { enable: true, mode: 'push' }
-        }
-    }
-});
-
-// Q & A
 // FAQ Accordion
 document.addEventListener('DOMContentLoaded', () => {
     const faqItems = document.querySelectorAll('.faq-item');
@@ -204,46 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// რეგისტრაცია 
-
-function handleRegister(event) {
-    event.preventDefault();
-
-    const fullName = document.getElementById('full-name').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirm-password').value;
-
-    // Basic validation
-    if (password !== confirmPassword) {
-        alert('Passwords do not match!');
-        return;
-    }
-
-    if (password.length < 6) {
-        alert('Password must be at least 6 characters long!');
-        return;
-    }
-
-    // Simulate saving user data (in a real app, this would be sent to a backend)
-    const user = {
-        fullName,
-        email,
-        password,
-    };
-
-    // Save to localStorage for demo purposes
-    localStorage.setItem('user', JSON.stringify(user));
-    alert('Registration successful! You can now log in.');
-    window.location.href = 'login.html'; // Redirect to login page
-}
-
-// Hamburger მენიუს გახსნა/დახურვა
-document.querySelector('.hamburger').addEventListener('click', () => {
-  document.querySelector('.nav-links').classList.toggle('active');
-  document.querySelector('.hamburger').classList.toggle('active');
-});
-
+// Mobile Offer Button Functionality
 document.addEventListener('DOMContentLoaded', () => {
     const offerItems = document.querySelectorAll('.offer-item');
     const mobileOfferBtn = document.querySelector('.mobile-offer-btn');
@@ -258,4 +163,4 @@ document.addEventListener('DOMContentLoaded', () => {
         offerItems[currentOfferIndex].classList.add('active');
       });
     }
-  });
+});
