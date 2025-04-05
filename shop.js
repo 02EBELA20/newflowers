@@ -235,3 +235,31 @@ const observer = new IntersectionObserver((entries, observer) => {
 }, observerOptions);
 
 observer.observe(offersSection);
+
+
+// Hamburger Menu Toggle
+document.querySelector('.hamburger').addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('active');
+    document.querySelector('.hamburger').classList.toggle('active');
+});
+
+// Toggle dropdown in mobile view
+document.querySelectorAll('.dropdown .dropbtn').forEach(dropbtn => {
+    dropbtn.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) { // Only in mobile view
+            e.preventDefault(); // Prevent default link behavior
+            const parent = dropbtn.parentElement;
+            const isActive = parent.classList.contains('active');
+
+            // Close all other dropdowns
+            document.querySelectorAll('.dropdown').forEach(d => {
+                d.classList.remove('active');
+            });
+
+            // Toggle the clicked dropdown
+            if (!isActive) {
+                parent.classList.add('active');
+            }
+        }
+    });
+});
