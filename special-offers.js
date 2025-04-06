@@ -18,109 +18,66 @@ particlesJS('particles-js', {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Horizontal Carousel
-    const setupHorizontalCarousel = () => {
-        const carouselContainer = document.querySelector('.carousel-container');
-        const horizontalItems = document.querySelectorAll('.special-bouquet-item');
-        const horizontalPrevBtn = document.querySelector('.prev-btn');
-        const horizontalNextBtn = document.querySelector('.next-btn');
-        let horizontalCurrentIndex = 0;
-        const horizontalTotalItems = horizontalItems.length;
+    // Pagination for Bouquet Grid
+    const setupPagination = () => {
+        const bouquetGrid = document.querySelector('#bouquetGrid');
+        const bouquetItems = document.querySelectorAll('.special-bouquet-item');
+        const prevPageBtn = document.querySelector('.prev-page');
+        const nextPageBtn = document.querySelector('.next-page');
+        const currentPageSpan = document.querySelector('#currentPage');
+        const totalPagesSpan = document.querySelector('#totalPages');
+        const paginationSection = document.querySelector('.pagination');
 
-        // Check if elements exist
-        if (!carouselContainer || !horizontalItems.length || !horizontalPrevBtn || !horizontalNextBtn) {
-            console.warn('Horizontal carousel elements not found.');
-            return;
+        const itemsPerPage = 8; // 8 items per page (2 rows of 4)
+        const totalItems = bouquetItems.length;
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        let currentPage = 1;
+
+        // Update total pages
+        totalPagesSpan.textContent = totalPages;
+
+        // Hide pagination if only one page
+        if (totalPages <= 1) {
+            paginationSection.classList.add('hidden');
         }
 
-        // Calculate visible items based on screen width
-        const updateVisibleItems = () => {
-            const containerWidth = carouselContainer.parentElement.offsetWidth;
-            const itemWidth = 200 + 20; // Card width (200px) + gap (20px)
-            const visibleItems = window.innerWidth <= 768 ? 2 : Math.floor(containerWidth / itemWidth);
-            return Math.max(1, visibleItems); // Ensure at least 1 item is visible
-        };
+        const updateGrid = () => {
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
 
-        let visibleItems = updateVisibleItems();
-        const itemWidth = 200 + 20; // Card width (200px) + gap (20px)
-
-        const updateHorizontalCarousel = () => {
-            // Update the transform for sliding
-            carouselContainer.style.transform = `translateX(-${horizontalCurrentIndex * itemWidth}px)`;
-
-            // Determine which cards are visible
-            horizontalItems.forEach((item, index) => {
-                if (index >= horizontalCurrentIndex && index < horizontalCurrentIndex + visibleItems) {
+            bouquetItems.forEach((item, index) => {
+                if (index >= startIndex && index < endIndex) {
                     item.classList.add('visible');
                 } else {
                     item.classList.remove('visible');
                 }
             });
 
-            console.log(`Current Index: ${horizontalCurrentIndex}, Visible Items: ${visibleItems}, Total Items: ${horizontalTotalItems}`);
+            // Update current page display
+            currentPageSpan.textContent = currentPage;
+
+            // Enable/disable buttons
+            prevPageBtn.disabled = currentPage === 1;
+            nextPageBtn.disabled = currentPage === totalPages;
         };
 
-        // Navigation buttons: Infinite looping
-        horizontalNextBtn.addEventListener('click', () => {
-            horizontalCurrentIndex++;
-            if (horizontalCurrentIndex >= horizontalTotalItems) {
-                horizontalCurrentIndex = 0; // Loop back to the first card
-            }
-            updateHorizontalCarousel();
-        });
-
-        horizontalPrevBtn.addEventListener('click', () => {
-            horizontalCurrentIndex--;
-            if (horizontalCurrentIndex < 0) {
-                horizontalCurrentIndex = horizontalTotalItems - 1; // Loop to the last card
-            }
-            updateHorizontalCarousel();
-        });
-
-        // Swipe support: Infinite looping
-        let horizontalStartX, horizontalIsDragging = false;
-        carouselContainer.addEventListener('touchstart', (e) => {
-            horizontalStartX = e.touches[0].clientX;
-            horizontalIsDragging = true;
-        });
-
-        carouselContainer.addEventListener('touchmove', (e) => {
-            if (!horizontalIsDragging) return;
-            const currentX = e.touches[0].clientX;
-            const diffX = horizontalStartX - currentX;
-            if (Math.abs(diffX) > 50) {
-                if (diffX > 0) {
-                    horizontalCurrentIndex++;
-                    if (horizontalCurrentIndex >= horizontalTotalItems) {
-                        horizontalCurrentIndex = 0; // Loop back to the first card
-                    }
-                } else {
-                    horizontalCurrentIndex--;
-                    if (horizontalCurrentIndex < 0) {
-                        horizontalCurrentIndex = horizontalTotalItems - 1; // Loop to the last card
-                    }
-                }
-                updateHorizontalCarousel();
-                horizontalIsDragging = false;
-            }
-        });
-
-        carouselContainer.addEventListener('touchend', () => {
-            horizontalIsDragging = false;
-        });
-
-        // Update visible items on resize
-        window.addEventListener('resize', () => {
-            visibleItems = updateVisibleItems();
-            // Ensure the current index doesn't exceed the maximum
-            if (horizontalCurrentIndex >= horizontalTotalItems) {
-                horizontalCurrentIndex = 0;
-            }
-            updateHorizontalCarousel();
-        });
-
         // Initial update
-        updateHorizontalCarousel();
+        updateGrid();
+
+        // Pagination button events
+        nextPageBtn.addEventListener('click', () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                updateGrid();
+            }
+        });
+
+        prevPageBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                updateGrid();
+            }
+        });
     };
 
     // Modal Functionality
@@ -136,7 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const horizontalCloseModal = document.querySelector('.close-modal');
 
         // Check if elements exist
-        if (!horizontalModal || !horizontalItems.length) {
+        if (!horizontalModal || !horizontalItems.length || !horizontalModalImage || !horizontalModalTitle || 
+            !horizontalModalDescription || !horizontalModalOldPrice || !horizontalModalNewPrice || 
+            !horizontalModalBtn || !horizontalCloseModal) {
             console.warn('Modal elements not found.');
             return;
         }
@@ -144,12 +103,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Open modal on item click
         horizontalItems.forEach(item => {
             item.addEventListener('click', () => {
-                const imgSrc = item.querySelector('img').src;
-                const title = item.querySelector('h3').textContent;
-                const description = item.querySelector('p').textContent;
-                const oldPrice = item.querySelector('.old-price').textContent;
-                const newPrice = item.querySelector('.new-price').textContent;
-                const btnLink = item.querySelector('.luxury-btn').href;
+                const imgSrc = item.querySelector('img')?.src || '';
+                const title = item.querySelector('h3')?.textContent || 'Bouquet';
+                const description = item.querySelector('p')?.textContent || 'A beautiful arrangement.';
+                const oldPrice = item.querySelector('.old-price')?.textContent || '';
+                const newPrice = item.querySelector('.new-price')?.textContent || '';
+                const btnLink = item.querySelector('.luxury-btn')?.href || '#';
 
                 horizontalModalImage.src = imgSrc;
                 horizontalModalTitle.textContent = title;
@@ -172,6 +131,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 horizontalModal.style.display = 'none';
             }
         });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && horizontalModal.style.display === 'flex') {
+                horizontalModal.style.display = 'none';
+            }
+        });
     };
 
     // Hamburger Menu Toggle
@@ -188,10 +154,18 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.toggle('active');
             hamburger.classList.toggle('active');
         });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !hamburger.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
     };
 
     // Initialize functionality
-    setupHorizontalCarousel();
+    setupPagination();
     setupModal();
     setupHamburgerMenu();
 });
