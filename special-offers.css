@@ -213,15 +213,17 @@ header .social-icons {
   transition: all 0.3s ease;
 }
 
-/* Special Offers Section */
+/* Special Offers Section - Desktop/Default Version */
 #special-offers {
-  margin-top:4%;
+  margin-top: 4%;
   padding: 160px 10px;
-  background: linear-gradient(90deg, #1a1a1a, #2c2c2c);
+  background: url('img/3f/17.jpg'); /* Background image for desktop */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
   overflow: hidden;
 }
-
 
 
 /* Special Cards Label */
