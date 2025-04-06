@@ -108,6 +108,35 @@ const itemsPerPage = 8; // თითო გვერდზე 8 ქარდი 
 let currentPage = 1;
 let currentFilter = 'all';
 
+// URL-დან query parameter-ის ამოღების ფუნქცია
+function getQueryParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+// გვერდის ჩატვირთვისას URL-დან კატეგორიის ამოღება
+window.addEventListener('DOMContentLoaded', () => {
+    const category = getQueryParameter('category');
+    if (category) {
+        currentFilter = category;
+        // ფილტრის ღილაკის განახლება
+        filterButtons.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-filter') === currentFilter) {
+                btn.classList.add('active');
+            }
+        });
+    } else {
+        // თუ URL-ში კატეგორია არ არის, "All" ღილაკი ნაგულისხმევად აქტიური იქნება
+        filterButtons.forEach(btn => {
+            if (btn.getAttribute('data-filter') === 'all') {
+                btn.classList.add('active');
+            }
+        });
+    }
+    updateItems(); // განაახლეთ თაიგულები ჩატვირთვისას
+});
+
 function updateItems() {
     let filteredItems = Array.from(offerItems);
     if (currentFilter !== 'all') {
@@ -162,7 +191,7 @@ filterButtons.forEach(button => {
 dropdownLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
-        const filter = link.getAttribute('data-filter');
+        const filter = link.getAttribute('href').split('=')[1]; // ამოვიღოთ კატეგორია href-დან (მაგ., "shop.html?category=roses" -> "roses")
         filterButtons.forEach(btn => {
             btn.classList.remove('active');
             if (btn.getAttribute('data-filter') === filter) {
@@ -174,9 +203,6 @@ dropdownLinks.forEach(link => {
         updateItems();
     });
 });
-
-// Initial update
-updateItems();
 
 // Modal Functionality
 const modal = document.getElementById('cardModal');
