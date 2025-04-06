@@ -1,4 +1,3 @@
-/* გლობალური სტილები */
 * {
   margin: 0;
   padding: 0;
@@ -84,7 +83,7 @@ nav {
 .logo-text {
   font-family: 'Cinzel', serif;
   font-size: 50px;
-  color: goldenrod; /* შეცვლილია ოქროსფერზე */
+  color: goldenrod;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 2px;
@@ -235,8 +234,7 @@ header .social-icons {
 /* Petals Canvas */
 #petals-canvas {
   background: url('img/3f/99.jpg');
-    background-position:  20% ;
-  ;
+  background-position: 20%;
   position: absolute;
   top: 0;
   left: 0;
@@ -308,6 +306,7 @@ header .social-icons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
+  width: 100%;
 }
 
 .offer-item {
@@ -325,6 +324,11 @@ header .social-icons {
 .offer-item:nth-child(3) { --index: 3; }
 .offer-item:nth-child(4) { --index: 4; }
 .offer-item:nth-child(5) { --index: 5; }
+.offer-item:nth-child(6) { --index: 1; }
+.offer-item:nth-child(7) { --index: 2; }
+.offer-item:nth-child(8) { --index: 3; }
+.offer-item:nth-child(9) { --index: 4; }
+.offer-item:nth-child(10) { --index: 5; }
 
 .offer-item:hover {
   transform: translateY(-10px);
@@ -346,7 +350,7 @@ header .social-icons {
 .offer-content {
   padding: 15px;
   text-align: center;
-  background-color:black;
+  background-color: black;
   opacity: 0.8;
 }
 
@@ -575,7 +579,7 @@ footer .social-icons {
 
 @media (max-width: 768px) {
   .page-wrapper #special-offers-page {
-      margin-top: 20%; /* მობილური ვერსიისთვის */
+      margin-top: 20%;
       padding: 100px 20px;
       background: linear-gradient(90deg, #1a1a1a, #2c2c2c);
       flex: 2;
@@ -794,7 +798,6 @@ footer .social-icons {
       grid-template-columns: 1fr;
   }
 }
-
 
 /* Header Styles */
 header {
