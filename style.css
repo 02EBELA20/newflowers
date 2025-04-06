@@ -407,11 +407,13 @@ ul li a:hover::after {
   width: 250px;
 }
 
+
+
 /* FAQ Section */
 #faq {
   padding: 60px 20px;
   background: linear-gradient(90deg, #1a1a1a, #2c2c2c);
-  color: #fff;
+  color: #d4af37;
   text-align: center;
 }
 
