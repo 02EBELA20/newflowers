@@ -564,7 +564,6 @@ footer .social-icons {
     transform: translateY(0);
   }
 }
-
 /* Mobile: Adjust for smaller screens */
 @media (max-width: 768px) {
   /* Navigation Adjustments */
@@ -742,38 +741,40 @@ footer .social-icons {
   }
 
   .bouquet-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 items per row on mobile */
-    gap: 15px;
+    grid-template-columns: 1fr; /* 1 item per row on mobile */
+    gap: 20px; /* Increased gap for better spacing */
     padding: 15px;
   }
 
   .special-bouquet-item {
-    height: 250px; /* Fixed height on mobile too */
+    width: 100%; /* Full width of the container */
+    height: 400px; /* Increased height for better visibility */
+    margin: 0 auto; /* Center the item */
   }
 
   .special-bouquet-item img {
-    height: 120px; /* Adjusted for mobile */
+    height: 200px; /* Increased image height for better proportion */
   }
 
   .special-bouquet-item h3 {
-    font-size: 14px;
+    font-size: 16px; /* Slightly larger for readability */
   }
 
   .special-bouquet-item p {
-    font-size: 11px;
+    font-size: 13px; /* Slightly larger for readability */
   }
 
   .special-bouquet-item .old-price {
-    font-size: 11px;
+    font-size: 14px; /* Adjusted for better fit */
   }
 
   .special-bouquet-item .new-price {
-    font-size: 13px;
+    font-size: 16px; /* Adjusted for better fit */
   }
 
   .special-bouquet-item .luxury-btn {
-    font-size: 11px;
-    padding: 5px 10px;
+    font-size: 14px; /* Adjusted for better fit */
+    padding: 8px 15px; /* Slightly larger button */
   }
 
   /* Modal Adjustments for Mobile */

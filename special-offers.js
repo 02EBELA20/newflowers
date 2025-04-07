@@ -28,9 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalPagesSpan = document.querySelector('#totalPages');
         const paginationSection = document.querySelector('.pagination');
 
-        const itemsPerPage = 8; // 8 items per page (2 rows of 4)
+        // Dynamically set items per page based on screen width
+        const isMobile = window.innerWidth <= 768;
+        const itemsPerPage = isMobile ? 4 : 8; // 4 items per page on mobile, 8 on desktop
         const totalItems = bouquetItems.length;
-        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        let totalPages = Math.ceil(totalItems / itemsPerPage);
         let currentPage = 1;
 
         // Update total pages
@@ -39,6 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Hide pagination if only one page
         if (totalPages <= 1) {
             paginationSection.classList.add('hidden');
+        } else {
+            paginationSection.classList.remove('hidden');
         }
 
         const updateGrid = () => {
@@ -69,6 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentPage < totalPages) {
                 currentPage++;
                 updateGrid();
+                // Scroll to the top of the special offers section
+                document.querySelector('#special-offers').scrollIntoView({ behavior: 'smooth' });
             }
         });
 
@@ -76,6 +82,26 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentPage > 1) {
                 currentPage--;
                 updateGrid();
+                // Scroll to the top of the special offers section
+                document.querySelector('#special-offers').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        // Update pagination on window resize
+        window.addEventListener('resize', () => {
+            const newIsMobile = window.innerWidth <= 768;
+            const newItemsPerPage = newIsMobile ? 4 : 8;
+            const newTotalPages = Math.ceil(totalItems / newItemsPerPage);
+            if (newItemsPerPage !== itemsPerPage || newTotalPages !== totalPages) {
+                totalPages = newTotalPages;
+                totalPagesSpan.textContent = totalPages;
+                currentPage = 1; // Reset to first page on resize
+                updateGrid();
+                if (totalPages <= 1) {
+                    paginationSection.classList.add('hidden');
+                } else {
+                    paginationSection.classList.remove('hidden');
+                }
             }
         });
     };
